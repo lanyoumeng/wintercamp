@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: your-image
+      volumeMounts:
+        - mountPath: /  # 设置挂载点路径
+          name: local-files                     # 自定义名称
+  volumes:
+    - name: local-files
+      hostPath:
+        path: /file      # 本地文件路径
